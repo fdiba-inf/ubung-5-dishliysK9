@@ -10,18 +10,25 @@ public class Search {
         int numberCount = input.nextInt();
 
         int[] numbers = new int[numberCount];
-
+        
+        
         System.out.println("Enter numbers: ");
         for (int index = 0; index < numbers.length; index++) {
             numbers[index] = input.nextInt();
         }
 
         System.out.print("Search for number: ");
-        int number = input.nextInt();
+        int element = input.nextInt();
 
-        int numberIndex = -1;
-        // Search for number in numbers
+        int elementIndex = -1;
+// Search for number in numbers
+        for (int i=0; i < numbers.length; i++){
+          if (numbers[i] == element){
+            elementIndex = i;
+          }
+        }
+        
 
-        System.out.println("Number index: " + numberIndex);
+        System.out.println("Number index: " + elementIndex);
     }
 }

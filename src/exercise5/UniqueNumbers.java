@@ -8,19 +8,31 @@ public class UniqueNumbers {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter number count: ");
-        int numberCount = input.nextInt();
+        int size = input.nextInt();
+        int arr[] = new int[size];
 
-        int[] numbers = new int[numberCount];
+        //int[] numbers = new int[size];
 
         System.out.println("Enter numbers: ");
-        for (int index = 0; index < numbers.length; index++) {
-            numbers[index] = input.nextInt();
+        for (int index = 0; index < size; index++) {
+            arr[index] = input.nextInt();
         }
 
-        int[] uniqueNumbers = new int[numbers.length];
-        // Find unique numbers in numbers
+        int[] arrDup = new int[size];
 
-        String uniqueNumbersAsString = Arrays.toString(uniqueNumbers);
-        System.out.println("Unique numbers: " + uniqueNumbersAsString);
+        arrDup[0] = arr[0];
+        for(int index = 1; index < size; index++) {
+          for (int j = 0; j < size; j++) {
+            if(arr[index] == arrDup[j]) {
+              break;
+            } else if (arrDup[j] == 0) {
+              arrDup[j] = arr[index];
+              break;
+            }
+          }
+        }
+
+        String asStringArrDup= Arrays.toString(arrDup);
+        System.out.println("Unique numbers: " + asStringArrDup);
     }
 }

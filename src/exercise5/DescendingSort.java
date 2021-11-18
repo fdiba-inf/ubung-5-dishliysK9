@@ -18,6 +18,18 @@ public class DescendingSort {
         }
 
         // Sort numbers in descending order
+        int temp;
+        for (int i = 0; i < numberCount; i++){
+          for ( int j = 0; j < numberCount - 1; j++){
+            
+            if (numbers[j] < numbers[j+1]){
+              temp = numbers[j];
+              numbers[j] = numbers[j+1];
+              numbers[j+1] = temp;
+            }
+
+          }
+        }
 
         String numbersAsString = Arrays.toString(numbers);
         System.out.println("Sorted numbers: " + numbersAsString);
